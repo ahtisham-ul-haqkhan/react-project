@@ -9,7 +9,7 @@ export const signup = async (req, res) => {
         if (user) {
             return res.status(409).json({ msg: "Email already in use" });
         }
-
+ 
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new Auth({ name, email, password: hashedPassword });
         await newUser.save();

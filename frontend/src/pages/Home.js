@@ -7,7 +7,7 @@ import axios from 'axios';
 function Home() {
   const [loggedInUser, setLoginInfo] = useState('');
   const [products, setProducts] = useState('');
-const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     setLoginInfo(localStorage.getItem('loggedInUser')); 
   }, []); 
@@ -16,8 +16,8 @@ const navigate = useNavigate();
     localStorage.removeItem('token');
     localStorage.removeItem('loggedInUser');
     handleSuccess("User Logout");
+    navigate('/login');
     setTimeout(() => {
-      navigate('/login');
     },1000)
   }
 

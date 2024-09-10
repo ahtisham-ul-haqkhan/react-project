@@ -6,6 +6,7 @@ import cors from "cors";
 // import authRouter from "./routes/AuthRouter";
 import authRouter from './routes/AuthRouter.js';
 import postRouter from './routes/PostRouter.js';
+import Post from './routes/Posts.js';
 
 dotenv.config();
 
@@ -24,4 +25,5 @@ mongoose.connect(URL).then(() => {
     });
 })
 app.use("/api", authRouter);
+app.use("/api", Post);
 app.use("/api", postRouter);
