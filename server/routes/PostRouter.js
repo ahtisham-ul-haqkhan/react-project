@@ -7,7 +7,7 @@ const postRouter = express.Router();
 postRouter.get('/postView', ensureAuthentication, (req, res) => {
     res.status(200).json([
         {
-            name: 'Mobile',
+            name: 'Samsung Mobile',
             password: '555'
         },
         {

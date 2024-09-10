@@ -26,8 +26,8 @@ const submitForm = async (e) => {
         handleSuccess('Sign up successful!'); 
         console.log(response); 
     } catch (error) {
-        handleError('An error occurred during sign up.'); // Call handleError with an error message
-        console.error(error); // Log the error for debugging
+        handleError('An error occurred during sign up.'); 
+        console.error(error); 
     }
 }
 
