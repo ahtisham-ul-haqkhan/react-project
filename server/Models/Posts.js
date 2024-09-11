@@ -1,15 +1,16 @@
 import mongoose from "mongoose";
 
-const postSchema = mongoose.Schema({
-    title:{
-        type:String,
-        require: true
+// Define the schema
+const postSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,  // Corrected "require" to "required"
     },
-    description:{
-        type:String,
-        require: true
+    description: {
+        type: String,
+        required: true,  // Corrected "require" to "required"
     }
 });
 
-
+// Export the model
 export default mongoose.model("Post", postSchema);
