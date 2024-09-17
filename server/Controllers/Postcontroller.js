@@ -1,5 +1,5 @@
 import Post from "../Models/Posts.js";
-
+import Auth from "../Models/Auth.js";
 
 export const postView = async (req, res) => {
     try {
@@ -35,7 +35,7 @@ export const allPostView = async (req, res) => {
 export const onePostView = async (req, res) => {
     try {
         const id = req.params.id;
-        const exitsPost = await Post.findById(id);
+        const exitsPost = await Post.findById(id).populate('auth_id');
         if(!exitsPost){
             return res.status(404).json({msg: "Post not found"});
         }

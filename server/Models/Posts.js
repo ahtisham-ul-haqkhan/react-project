@@ -9,6 +9,11 @@ const postSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true,  // Corrected "require" to "required"
+    },
+    auth_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Auth',
+        required: true,
     }
 });
 
